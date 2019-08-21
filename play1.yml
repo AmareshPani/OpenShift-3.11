@@ -1,0 +1,8 @@
+- hosts: mons
+  become: true
+  tasks:
+    - name: host name
+      script: /home/test.sh
+      register: output
+
+    - debug: var=output.stdout_lines
